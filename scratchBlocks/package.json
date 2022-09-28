@@ -3,15 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "blocks": "webpack --config webpack.config.js",
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android-full": "yarn blocks; yarn android",
+    "ios": "react-native run-ios --simulator=\"iPad Air (5th generation)\"",
+    "ios-full": "yarn blocks; yarn ios ",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "react": "18.1.0",
-    "react-native": "0.70.1"
+    "react-native": "0.70.1",
+    "react-native-webview": "^11.23.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -28,6 +32,7 @@
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.72.1",
     "react-test-renderer": "18.1.0",
+    "scratch-blocks": "^0.1.0-prerelease.20220927130010",
     "typescript": "^4.8.3"
   },
   "jest": {
